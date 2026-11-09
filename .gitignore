@@ -1,0 +1,55 @@
+# ==========================================================
+# LaTeX: archivos generados al compilar
+# ==========================================================
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.xdv
+*.nav
+*.snm
+*.vrb
+*.dvi
+*.idx
+*.ilg
+*.ind
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+*.ist
+*-blx.bib
+*.auxlock
+_minted*/
+latex.out/
+
+# ==========================================================
+# PDFs: se ignora el resultado de compilar, pero NO las
+# imágenes del proyecto (figuras y logo)
+# ==========================================================
+*.pdf
+!figures/**/*.pdf
+!logo.pdf
+
+# ==========================================================
+# Editor y sistema operativo
+# ==========================================================
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
