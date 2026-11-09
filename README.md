@@ -2,8 +2,6 @@
 
 Plantilla basada en [tau-class](https://github.com/MemoJimenez/Tau-class) (CC BY 4.0), adaptada a **una columna**, **sense abstract**, amb **portada** i color **burdeus**.
 
-> 🌐 Versió en castellà: [README.md](README.md)
-
 ## 📑 Índex
 
 1. Estructura del projecte
