@@ -40,46 +40,22 @@ trabajo/
 
 ## 2. 🧩 Com treballem amb una secció per fitxer
 
-**Idea:** cada persona té assignats un o diversos fitxers de `secciones/` i edita només aquests. Git només dona conflictes quan dues persones toquen **les mateixes línies** del **mateix fitxer**, així que repartint fitxers gairebé no n'hi haurà.
-
-### 👥 Repartiment de seccions
-
-Apunteu aquí qui és el responsable de cadascuna:
-
-| Fitxer | Responsable |
-|---|---|
-| `01_introduccion.tex` | (nom) |
-| `02_desarrollo.tex` | (nom) |
-| `03_resultados.tex` | (nom) |
-| `04_conclusiones.tex` | (nom) |
-
-### Com s'inclouen les seccions
-
-A `main.tex`:
-
-```latex
-\input{secciones/01_introduccion}
-\input{secciones/02_desarrollo}
-\input{secciones/03_resultados}
-\input{secciones/04_conclusiones}
-```
-
-L'**ordre d'aquestes línies** és l'ordre del document.
+**Idea:** cada persona té assignats un o diversos fitxers de `seccions/` i edita només aquests. Git només dona conflictes quan dues persones toquen **les mateixes línies** del **mateix fitxer**, així que repartint fitxers gairebé no n'hi haurà.
 
 ### Afegir una secció nova
 
-1. Crea `secciones/05_nom.tex` amb aquest contingut:
+1. Crea `seccions/05_nom.tex` amb aquest contingut:
    ```latex
    \section{Títol de la secció}
    \label{sec:nom}
 
    Text...
    ```
-2. Afegeix `\input{secciones/05_nom}` a `main.tex` al lloc que toqui (aviseu el grup, perquè és un canvi en un fitxer compartit).
+2. Afegeix `\input{seccions/05_nom}` a `main.tex` al lloc que toqui (aviseu el grup, perquè és un canvi en un fitxer compartit).
 
 ### Si una secció és molt gran
 
-Es pot dividir en subfitxers: `secciones/02_desarrollo.tex` pot contenir `\input{secciones/02a_teoria}` i `\input{secciones/02b_modelo}`, i així dues persones treballen a la mateixa secció sense trepitjar-se.
+Es pot dividir en subfitxers: `seccions/02_desarrollo.tex` pot contenir `\input{seccions/02a_teoria}` i `\input{seccions/02b_modelo}`, i així dues persones treballen a la mateixa secció sense trepitjar-se.
 
 ### ⚠️ Fitxers compartits (els únics amb risc de conflicte)
 
@@ -99,26 +75,6 @@ latexmk -pdf main.tex
 ```
 
 Es compila amb `pdflatex` i la bibliografia amb `biber`. Si falta algun paquet a TinyTeX: `tlmgr install nom_del_paquet`.
-
----
-
-## 4. 🔄 Rutina amb Git
-
-Cada vegada que treballeu:
-
-```
-git pull                              # 1. portar l'últim
-# ... editar el vostre fitxer ...     # 2. escriure
-git add secciones/02_desarrollo.tex   # 3. preparar NOMÉS els vostres fitxers
-git commit -m "Afegida teoria"        # 4. desar
-git pull                              # 5. portar canvis per si de cas
-git push                              # 6. pujar
-```
-
-- Pugeu els canvis **sovint**, no espereu a tenir-ho tot acabat.
-- ✅ **Abans de pujar, comproveu que compila.** Si no compila, no pugeu i aviseu.
-- Si hi ha un conflicte, Git marca el fitxer amb `<<<<<<<`, `=======`, `>>>>>>>`. Deixeu el text correcte, esborreu aquestes marques, i feu `git add fitxer` i `git commit`. A VS Code surten botons per triar una versió o l'altra.
-- Escriviu **una frase per línia** als `.tex`: Git compara per línies i els conflictes són molt més fàcils de resoldre.
 
 ---
 
